@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+
 
 public class ByClassTest  {
     private WebDriver driver;
@@ -28,16 +28,16 @@ public class ByClassTest  {
         WebElement  loginButton=driver.findElement(xpathLocator);
         loginButton.click();
     }
-    public void inputLogin(String id){
+    public void inputLogin(String id,String login){
         idLocator=By.id(id);
         WebElement loginField = driver.findElement(idLocator);
-        loginField.sendKeys("marinakrasyuk21@yandex.com");
+        loginField.sendKeys(login);
     }
-    public void inputPassword(String name){
+    public void inputPassword(String name,String pwd){
         nameLocator=By.name(name);
         wait.until(ExpectedConditions.visibilityOfElementLocated(nameLocator));
         WebElement passwordField = driver.findElement(nameLocator);
-        passwordField.sendKeys("vbkfyf06");
+        passwordField.sendKeys(pwd);
 }
 
 }
