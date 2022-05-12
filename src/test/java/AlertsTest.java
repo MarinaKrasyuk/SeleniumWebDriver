@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
@@ -27,12 +28,10 @@ public class AlertsTest {
     public void alertBoxTest(){
         WebElement alertElement = driver.findElement(By.cssSelector("[onclick='myAlertFunction()']"));
         alertElement.click();
-
         Alert alert=wait.until(ExpectedConditions.alertIsPresent());
         String textAlert=alert.getText();
-        System.out.println(textAlert);
-
         alert.accept();
+        Assertions.assertTrue(textAlert.equals("I am an alert box!"));
 
     }
     @Test
@@ -42,10 +41,9 @@ public class AlertsTest {
 
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert= driver.switchTo().alert();
-        String textAlert=alert.getText();
-        System.out.println(textAlert);
-
         alert.dismiss();
+        String text=driver.findElement(By.cssSelector("#confirm-demo")).getText();
+        Assertions.assertTrue(text.equals("You pressed Cancel!"));
 
     }
     @Test
@@ -55,26 +53,25 @@ public class AlertsTest {
 
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert= driver.switchTo().alert();
-        String textAlert=alert.getText();
-        System.out.println(textAlert);
-
         alert.accept();
+        String text=driver.findElement(By.cssSelector("#confirm-demo")).getText();
+        Assertions.assertTrue(text.equals("You pressed OK!"));
 
     }
     @Test
     public void promptBoxTest(){
         WebElement promptElement = driver.findElement(By.cssSelector("[onclick='myPromptFunction()']"));
         promptElement.click();
-
         Alert alert=wait.until(ExpectedConditions.alertIsPresent());
         alert.sendKeys("TEST");
-
         alert.accept();
+        Assertions.assertTrue(driver.findElement(By.cssSelector("#prompt-demo")).isDisplayed());
 
     }
 
     @AfterEach
     void cleanUp(){
-      driver.quit();
+
+        driver.quit();
     }
 }

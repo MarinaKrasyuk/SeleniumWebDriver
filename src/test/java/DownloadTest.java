@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -17,7 +18,7 @@ public class DownloadTest {
     public void init(){
         System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
         driver=new ChromeDriver();
-        wait=new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait=new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.get("https://demo.seleniumeasy.com/bootstrap-download-progress-demo.html");
     }
     @Test
@@ -28,9 +29,11 @@ public class DownloadTest {
         wait.until(ExpectedConditions.textToBePresentInElement(percent,"50%"));
         Thread.sleep(1000);
         driver.navigate().refresh();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".percenttext")));
+        Assertions.assertTrue(percent.getText().equals("0%"));
     }
     @AfterEach
     void cleanUp(){
-       driver.quit();
+         driver.quit();
     }
 }
