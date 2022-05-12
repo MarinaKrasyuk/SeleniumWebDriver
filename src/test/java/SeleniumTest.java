@@ -56,7 +56,7 @@ public class SeleniumTest {
     public void loginTest(String login,String password) throws InterruptedException {
         initialPage();
         loginPage(login);
-        Thread.sleep(1000); //implicit waiter
+        Thread.sleep(1000); //imlicit waiter
         passwordPage(password);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@data-count='{\"name\":\"user\"}']")));
         Assertions.assertTrue(driver.findElement(By.xpath("//a[@href='#tabs/relevant']")).isDisplayed());
@@ -66,7 +66,7 @@ public class SeleniumTest {
 
  @AfterEach
   void cleanUp(){
-     //driver.quit();
+     driver.quit();
   }
 
 
