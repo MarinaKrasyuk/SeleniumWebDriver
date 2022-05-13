@@ -9,10 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import page_object.LoginPage;
-import page_object.MailPage;
-import page_object.PasswordPage;
-import page_object.StartPage;
+import page_object.*;
 
 import java.time.Duration;
 
