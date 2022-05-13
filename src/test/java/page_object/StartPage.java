@@ -3,6 +3,7 @@ package page_object;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,8 +16,9 @@ public class StartPage {
     private StartPage(WebDriver driver,WebDriverWait wait) {
         this.driver=driver;
         this.wait=wait;
+        PageFactory.initElements(driver,this);
     }
-    public static StartPage getInstanceOfStartPage(WebDriver driver, WebDriverWait wait)
+    public static StartPage getInstanceOfStartPage(WebDriver driver,WebDriverWait wait)
     {
         if (instanceOfStartPage == null)
             instanceOfStartPage = new StartPage(driver,wait);

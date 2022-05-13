@@ -20,6 +20,7 @@ public class PasswordPage {
     private PasswordPage(WebDriver driver,WebDriverWait wait) {
         this.driver=driver;
         this.wait=wait;
+        PageFactory.initElements(driver,this);
     }
     public static PasswordPage getInstanceOfPasswordPage(WebDriver driver,WebDriverWait wait){
         if (instanceOfPasswordPage == null)

@@ -16,6 +16,7 @@ public class LoginPage {
     private LoginPage(WebDriver driver,WebDriverWait wait) {
         this.driver=driver;
         this.wait=wait;
+        PageFactory.initElements(driver,this);
     }
     public static LoginPage getInstanceOfLoginPage(WebDriver driver,WebDriverWait wait){
         if (instanceOfLoginPage == null)
