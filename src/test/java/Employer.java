@@ -1,6 +1,4 @@
-import org.openqa.selenium.WebElement;
-
-public class TableClass {
+public class Employer {
     private String name;
     private String position;
     private String office;
