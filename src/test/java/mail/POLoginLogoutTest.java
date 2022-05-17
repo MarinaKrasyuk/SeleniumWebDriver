@@ -1,16 +1,17 @@
 package mail;
-
 import org.junit.jupiter.api.*;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page_object.*;
-
+import org.apache.commons.io.FileUtils;
+import java.io.File;
 import java.time.Duration;
 
 
@@ -31,30 +32,37 @@ public class POLoginLogoutTest {
 
     @ParameterizedTest
     @CsvSource(value = {"testqaqa.qa, CFStest"})
-    public void loginTest(String login,String password) {
+    public void loginTest(String login,String password) throws Exception {
         logIn(login,password);
         Assertions.assertTrue(mailPage.isIconPresent());
 
     }
     @ParameterizedTest
     @CsvSource(value = {"testqaqa.qa, CFStest"})
-    public void logoutTest(String login,String password){
+    public void logoutTest(String login,String password) throws Exception {
         logIn(login,password);
         ExitPage exitPage=mailPage.clickExitPage();
         Assertions.assertTrue(exitPage.isLoginPresent());
     }
 
-private void logIn(String login,String password){
+private void logIn(String login,String password) throws Exception {
     StartPage startPage= StartPage.getInstanceOfStartPage(driver,wait);
+    takeSnapShot(driver, "./ScreenShot_Folder/Test_Login.png") ;
     LoginPage loginPage=startPage.clickLoginPage();
     PasswordPage passwordPage=loginPage.clickPasswordPage(login);
     mailPage= passwordPage.clickMailPage(password);
 }
-  @AfterEach
+
+    public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
+
+        TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(SrcFile, new File (fileWithPath));
+
+    }
+    @AfterEach
     void cleanUp(){
 
         driver.quit();
     }
-
-
 }
