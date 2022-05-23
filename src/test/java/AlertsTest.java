@@ -1,5 +1,8 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -24,10 +27,10 @@ public class AlertsTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
     @Test
+    @Description(value ="Alert Box Test")
     public void alertBoxTest(){
         WebElement alertElement = driver.findElement(By.cssSelector("[onclick='myAlertFunction()']"));
         alertElement.click();
-
         Alert alert=wait.until(ExpectedConditions.alertIsPresent());
         String textAlert=alert.getText();
         System.out.println(textAlert);

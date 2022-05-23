@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,7 @@ public class DownloadTest {
         driver.get("https://demo.seleniumeasy.com/bootstrap-download-progress-demo.html");
     }
     @Test
+    @DisplayName("DownloadTest")
     public void main() throws InterruptedException {
         WebElement downloadButton = driver.findElement(By.cssSelector("#cricle-btn"));
         downloadButton.click();
