@@ -12,7 +12,7 @@ import page_object.*;
 
 import java.time.Duration;
 
-public class PFLoginLogoutTest {
+public class PFLoginTest {
     private static WebDriver driver;
     private static WebDriverWait wait;
 
@@ -31,13 +31,7 @@ public class PFLoginLogoutTest {
         Assertions.assertTrue(mailPage.isIconPresent());
 
     }
-    @ParameterizedTest
-    @CsvSource(value = {"testqaqa.qa, CFStest"})
-    public void logoutTest(String login,String password){
-        MailPage mailPage=logIn(login,password);
-        ExitPage exitPage=mailPage.clickExitPage();
-        Assertions.assertTrue(exitPage.isLoginPresent());
-    }
+
 
     private MailPage logIn(String login,String password){
         StartPage startPage= StartPage.getInstanceOfStartPage(driver,wait);
