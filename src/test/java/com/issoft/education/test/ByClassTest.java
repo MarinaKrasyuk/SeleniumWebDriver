@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/test/java/mail/ByClassTest.java
 package mail;
+========
+package com.issoft.education.test;
+>>>>>>>> master:src/test/java/com/issoft/education/test/ByClassTest.java
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

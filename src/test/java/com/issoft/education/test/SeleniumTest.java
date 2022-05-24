@@ -1,39 +1,21 @@
+<<<<<<<< HEAD:src/test/java/mail/SeleniumTest.java
 package mail;
 
 import mail.ByClassTest;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
+========
+package com.issoft.education.test;
 
+import constant.ConstantURL;
+>>>>>>>> master:src/test/java/com/issoft/education/test/SeleniumTest.java
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-public class SeleniumTest {
-    private static WebDriver driver;
-    private static WebDriverWait wait;
+public class SeleniumTest extends BaseTest {
     private static ByClassTest byObject;
 
-
-    @BeforeEach
-    void   init(){
-      System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
-      driver= new ChromeDriver();
-      wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-      driver.get("https://mail.yandex.com/");
-      driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-      byObject=new ByClassTest(driver,wait);
-
-  }
   private void initialPage()
   {
       String css=".button2_theme_mail-white";
@@ -56,6 +38,8 @@ public class SeleniumTest {
             "marinakrasyuk21@yandex.com, Kira300815!",
             "testqaqa.qa, CFStest"})
     public void loginTest(String login,String password) throws InterruptedException {
+        driver.get(ConstantURL.MAILLINK);
+        byObject=new ByClassTest(driver,wait);
         initialPage();
         loginPage(login);
         Thread.sleep(1000); //imlicit waiter
@@ -64,12 +48,5 @@ public class SeleniumTest {
         Assertions.assertTrue(driver.findElement(By.xpath("//a[@href='#tabs/relevant']")).isDisplayed());
 
   }
-
-
- @AfterEach
-  void cleanUp(){
-     driver.quit();
-  }
-
 
 }
