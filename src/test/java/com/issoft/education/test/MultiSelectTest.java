@@ -1,7 +1,9 @@
+package com.issoft.education.test;
+
+import constant.ConstantURL;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -9,14 +11,12 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class MultiSelectTest extends BaseTest {
-    private WebDriver driver;
     private Select select;
     private final By MULTI_SELECT = By.xpath("//*[@name='States']");
 
     @Test
     public void multiSelectAction() throws InterruptedException {
-        driver = BaseTest.driver;
-        driver.get("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+        driver.get(ConstantURL.DEMOLINK+"basic-select-dropdown-demo.html");
         WebElement multiselect = driver.findElement(MULTI_SELECT);
         select = new Select(multiselect);
         List<WebElement> options = multiselect.findElements(By.tagName("option"));

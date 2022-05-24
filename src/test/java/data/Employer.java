@@ -1,3 +1,5 @@
+package data;
+
 public class Employer {
     private String name;
     private String position;

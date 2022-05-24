@@ -1,13 +1,12 @@
+package com.issoft.education.test;
+
+import constant.ConstantURL;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 public class SeleniumTest extends BaseTest {
-    private static WebDriver driver;
-    private static WebDriverWait wait;
     private static ByClassTest byObject;
 
   private void initialPage()
@@ -32,9 +31,7 @@ public class SeleniumTest extends BaseTest {
             "marinakrasyuk21@yandex.com, Kira300815!",
             "testqaqa.qa, CFStest"})
     public void loginTest(String login,String password) throws InterruptedException {
-        driver=BaseTest.driver;
-        wait=BaseTest.wait;
-        driver.get("https://mail.yandex.com/");
+        driver.get(ConstantURL.MAILLINK);
         byObject=new ByClassTest(driver,wait);
         initialPage();
         loginPage(login);

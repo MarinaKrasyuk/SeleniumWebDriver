@@ -1,3 +1,7 @@
+package data;
+
+import com.issoft.education.test.BaseTest;
+import data.Employer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -5,8 +9,8 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployersTable {
-    private static WebDriver driver;
+public class EmployersTable extends BaseTest {
+
     private WebElement tableEl;
 
 
