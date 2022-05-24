@@ -23,13 +23,14 @@ public class StartPage {
 
         return instanceOfStartPage;
     }
-    public LoginPage clickLoginPage(){
+    public LoginPage clickLoginPage() throws InterruptedException {
         clickLoginButton();
         LoginPage loginPage=LoginPage.getInstanceOfLoginPage(driver,wait);
         return loginPage;
     }
 
-    private void clickLoginButton() {
+    private void clickLoginButton() throws InterruptedException {
+        Thread.sleep(10000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".button2_theme_mail-white")));
         loginbutton=driver.findElement(By.cssSelector(".button2_theme_mail-white"));
         loginbutton.click();
