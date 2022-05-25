@@ -12,9 +12,8 @@ public class DownloadTest extends BaseTest {
 
     @Test
     public void main() throws InterruptedException {
-        driver.get(ConstantURL.DEMOLINK+"/bootstrap-download-progress-demo.html");
-        WebElement downloadButton = driver.findElement(By.cssSelector("#cricle-btn"));
-        downloadButton.click();
+        driver.get(ConstantURL.DOWNLOAD_PAGE);
+        driver.findElement(By.cssSelector("#cricle-btn")).click();
         while (!isVisible(By.xpath("//div[@class='slice clipauto']"),driver)){//after 50% and more class='slice clipauto'
 
         }

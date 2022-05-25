@@ -1,7 +1,6 @@
 package data;
 
 import com.issoft.education.test.BaseTest;
-import data.Employer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
