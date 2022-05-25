@@ -9,23 +9,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExitPage {
     private static WebDriver driver;
-    private static ExitPage instanceOfExitPage;
     private WebDriverWait wait;
-    private WebElement loginButton;
+    private final By signInButton=By.xpath("//*[@id='passp:sign-in']");
 
     public ExitPage(WebDriver driver,WebDriverWait wait) {
         this.driver=driver;
         this.wait=wait;
     }
-    public static ExitPage getInstanceOfExitPage(WebDriver driver,WebDriverWait wait){
-        if (instanceOfExitPage == null)
-            instanceOfExitPage = new ExitPage(driver,wait);
-
-        return instanceOfExitPage;
-    }
     public boolean isLoginPresent(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='passp:sign-in']")));
-        loginButton=driver.findElement(By.xpath("//*[@id='passp:sign-in']"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(signInButton));
+        WebElement loginButton=driver.findElement(signInButton);
         if (loginButton.isDisplayed())
             return true;
         else

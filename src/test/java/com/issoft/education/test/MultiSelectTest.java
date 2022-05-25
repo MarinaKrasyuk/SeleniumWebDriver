@@ -15,8 +15,8 @@ public class MultiSelectTest extends BaseTest {
     private final By MULTI_SELECT = By.xpath("//*[@name='States']");
 
     @Test
-    public void multiSelectAction() throws InterruptedException {
-        driver.get(ConstantURL.DEMOLINK+"basic-select-dropdown-demo.html");
+    public void multiSelectAction() {
+        driver.get(ConstantURL.SELECT_DROPDOWN_PAGE);
         WebElement multiselect = driver.findElement(MULTI_SELECT);
         select = new Select(multiselect);
         List<WebElement> options = multiselect.findElements(By.tagName("option"));

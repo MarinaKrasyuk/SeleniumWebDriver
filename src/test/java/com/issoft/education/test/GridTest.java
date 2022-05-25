@@ -11,7 +11,7 @@ public class GridTest extends BaseTest {
     @Test
     public void gridTest() throws InterruptedException {
 
-        driver.get(ConstantURL.DEMOLINK+"/table-sort-search-demo.html");
+        driver.get(ConstantURL.TABLE_PAGE);
         WebElement tableEl=driver.findElement(By.xpath("//table/tbody"));
         EmployersTable additional=new EmployersTable(driver,tableEl);
         additional.setEntries();

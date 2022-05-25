@@ -1,18 +1,12 @@
-<<<<<<<< HEAD:src/test/java/mail/SeleniumTest.java
-package mail;
-
-import mail.ByClassTest;
-import org.junit.jupiter.api.AfterEach;
-========
 package com.issoft.education.test;
 
 import constant.ConstantURL;
->>>>>>>> master:src/test/java/com/issoft/education/test/SeleniumTest.java
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 public class SeleniumTest extends BaseTest {
     private static ByClassTest byObject;
 

@@ -12,7 +12,7 @@ public class UserTest extends BaseTest {
 
     @Test
     public void waitUser(){
-        driver.get(ConstantURL.DEMOLINK+"/dynamic-data-loading-demo.html");
+        driver.get(ConstantURL.USER_LOADING_PAGE);
         WebElement button = driver.findElement(By.cssSelector("#save"));
         button.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loading")));

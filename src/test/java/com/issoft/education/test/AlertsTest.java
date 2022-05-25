@@ -11,7 +11,7 @@ public class AlertsTest extends BaseTest {
 
     @Test
     public void alertBoxTest(){
-        driver.get(ConstantURL.DEMOLINK+"javascript-alert-box-demo.html");
+        driver.get(ConstantURL.ALERT_BOX_PAGE);
         WebElement alertElement = driver.findElement(By.cssSelector("[onclick='myAlertFunction()']"));
         alertElement.click();
         Alert alert= wait.until(ExpectedConditions.alertIsPresent());
@@ -22,7 +22,7 @@ public class AlertsTest extends BaseTest {
     }
     @Test
     public void confirmBoxDismissTest(){
-        driver.get(ConstantURL.DEMOLINK + "/javascript-alert-box-demo.html");
+        driver.get(ConstantURL.ALERT_BOX_PAGE);
         WebElement confirmElement = driver.findElement(By.cssSelector("[onclick='myConfirmFunction()']"));
         confirmElement.click();
         wait.until(ExpectedConditions.alertIsPresent());
@@ -34,7 +34,7 @@ public class AlertsTest extends BaseTest {
     }
     @Test
     public void confirmBoxAcceptTest(){
-        driver.get(ConstantURL.DEMOLINK+"/javascript-alert-box-demo.html");
+        driver.get(ConstantURL.ALERT_BOX_PAGE);
         WebElement confirmElement =driver.findElement(By.cssSelector("[onclick='myConfirmFunction()']"));
         confirmElement.click();
         wait.until(ExpectedConditions.alertIsPresent());
@@ -46,7 +46,7 @@ public class AlertsTest extends BaseTest {
     }
     @Test
     public void promptBoxTest(){
-        driver.get(ConstantURL.DEMOLINK +"/javascript-alert-box-demo.html");
+        driver.get(ConstantURL.ALERT_BOX_PAGE);
         WebElement promptElement = driver.findElement(By.cssSelector("[onclick='myPromptFunction()']"));
         promptElement.click();
         Alert alert=wait.until(ExpectedConditions.alertIsPresent());
