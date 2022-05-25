@@ -11,17 +11,16 @@ import java.time.Duration;
 public class BaseTest {
     public static WebDriver driver;
     public static WebDriverWait wait;
-    public static Driver driverInstance;
+
 
     @BeforeEach
     public  void init(){
-        driverInstance= Driver.getInstanceOfDriver();
-        driver=driverInstance.getDriver();
-        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver= Driver.getDriver();
+        wait=new WebDriverWait(driver, Duration.ofSeconds(15));
 
     }
     @AfterEach
     void  cleanUp(){
-        driverInstance.driverClose();
+       Driver.driverClose();
     }
 }

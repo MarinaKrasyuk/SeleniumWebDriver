@@ -13,8 +13,7 @@ public class UserTest extends BaseTest {
     @Test
     public void waitUser(){
         driver.get(ConstantURL.USER_LOADING_PAGE);
-        WebElement button = driver.findElement(By.cssSelector("#save"));
-        button.click();
+        driver.findElement(By.cssSelector("#save")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loading")));
         Assertions.assertTrue(driver.findElement(By.cssSelector("#loading>img")).isDisplayed());
     }

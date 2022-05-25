@@ -2,7 +2,6 @@ package page_object;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,10 +21,9 @@ public class StartPage {
         return new LoginPage(driver,wait);
     }
 
-    private void clickLoginButton() throws InterruptedException {
-        Thread.sleep(10000);
+    private void clickLoginButton()  {
         wait.until(ExpectedConditions.visibilityOfElementLocated(login));
-        WebElement loginButton=driver.findElement(login);
-        loginButton.click();
+        driver.findElement(login).click();
+
     }
 }

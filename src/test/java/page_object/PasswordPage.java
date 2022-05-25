@@ -24,9 +24,7 @@ public class PasswordPage {
     }
     private void clickLoginButton(String pwd) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(fieldPwd));
-        WebElement passwordInput=driver.findElement(fieldPwd);
-        passwordInput.sendKeys(pwd);
-        WebElement loginButton=driver.findElement(signInButton);
-        loginButton.click();
+        driver.findElement(fieldPwd).sendKeys(pwd);
+        driver.findElement(signInButton).click();
     }
 }
