@@ -16,6 +16,7 @@ public class MultiSelectTest extends BaseTest {
 
     @Test
     public void multiSelectAction() {
+        System.out.println("Start");
         driver.get(ConstantURL.SELECT_DROPDOWN_PAGE);
         WebElement multiselect = driver.findElement(MULTI_SELECT);
         select = new Select(multiselect);
