@@ -7,7 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
+
 public class BaseTest {
     public static WebDriver driver;
     public static WebDriverWait wait;

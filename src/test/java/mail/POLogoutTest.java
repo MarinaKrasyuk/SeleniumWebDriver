@@ -14,7 +14,7 @@ public class POLogoutTest extends BaseTest {
     @CsvSource(value = {"testqaqa.qa, CFStest"})
     public void logoutTest(String login,String password) throws Exception {
         driver.get(ConstantURL.MAILLINK);
-        mailPage=MailClass.logIn(driver,wait,login,password);
+        mailPage=MailClass.logInPO(driver,wait,login,password);
         ExitPage exitPage=mailPage.clickExitPage();
         Assertions.assertTrue(exitPage.isLoginPresent());
     }

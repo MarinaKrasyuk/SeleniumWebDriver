@@ -17,7 +17,7 @@ public class POLoginTest extends BaseTest {
     @CsvSource(value = {"testqaqa.qa, CFStest"})
     public void loginTest(String login,String password) throws Exception {
         driver.get(ConstantURL.MAILLINK);
-        mailPage=MailClass.logIn(driver,wait,login,password);
+        mailPage=MailClass.logInPO(driver,wait,login,password);
         Assertions.assertTrue(mailPage.isIconPresent());
 
     }
