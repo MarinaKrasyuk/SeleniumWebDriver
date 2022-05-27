@@ -13,6 +13,7 @@ import page_object.LoginPage;
 import page_object.MailPage;
 import page_object.PasswordPage;
 import page_object.StartPage;
+import utils.Utils;
 
 import java.io.File;
 
@@ -20,23 +21,17 @@ public class MailClass {
 
     public static MailPage logInPO(WebDriver driver, WebDriverWait wait,String login, String password) throws Exception {
         StartPage startPage= new StartPage(driver,wait);
-        takeSnapShot(driver, "./ScreenShot_Folder/Test_Login.png") ;
+        Utils.takeSnapShot(driver);
         LoginPage loginPage=startPage.clickLoginPage();
         PasswordPage passwordPage=loginPage.clickPasswordPage(login);
         MailPage mailPage= passwordPage.clickMailPage(password);
         return mailPage;
     }
 
-    public static void takeSnapShot(WebDriver webdriver, String fileWithPath) throws Exception{
 
-        TakesScreenshot scrShot =((TakesScreenshot)webdriver);
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(SrcFile, new File (fileWithPath));
-
-    }
     public static PFMailPage logInPF(WebDriver driver, WebDriverWait wait,String login, String password) throws Exception {
         PFStartPage startPage= new PFStartPage(driver,wait);
-        takeSnapShot(driver, "./ScreenShot_Folder/Test_Login.png") ;
+        Utils.takeSnapShot(driver);
         PFLoginPage loginPage=startPage.clickLoginPage();
         PFPasswordPage passwordPage=loginPage.clickPasswordPage(login);
         PFMailPage mailPage= passwordPage.clickMailPage(password);
