@@ -1,4 +1,4 @@
-package mail;
+package com.issoft.education.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
