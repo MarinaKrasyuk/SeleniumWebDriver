@@ -1,5 +1,6 @@
 package utils;
 
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.checkerframework.checker.units.qual.Current;
 import org.openqa.selenium.OutputType;
@@ -21,5 +22,9 @@ public class Utils {
         String fileName="./ScreenShot_Folder/"+ date_str+".png";
         FileUtils.copyFile(SrcFile,new File(fileName));
 
+    }
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public static byte[] saveScreenshotPNG (WebDriver driver) {
+        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
 }

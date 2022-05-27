@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ExitPage {
     private static WebDriver driver;
     private WebDriverWait wait;
-    private final By signInButton=By.xpath("//*[@id='passp:sign-in']");
+    private final By signInButton=By.xpath("//*[@id='passp:sign-in1']");//incorrect
 
     public ExitPage(WebDriver driver,WebDriverWait wait) {
         this.driver=driver;
