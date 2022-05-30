@@ -16,12 +16,7 @@ public class Driver {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            //ChromeOptions opt = new ChromeOptions();
-            //opt.addExtensions(new File("path for crx file of the extension"));
             System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability(ChromeOptions.CAPABILITY,true);
-            capabilities.setCapability(CapabilityType.BROWSER_NAME, "CH");
             driver = new ChromeDriver();
 
         }
