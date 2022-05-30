@@ -2,6 +2,11 @@ package data;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.io.File;
 
 public class Driver {
     private static WebDriver driver;
@@ -13,6 +18,7 @@ public class Driver {
         if (driver == null) {
             System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
             driver = new ChromeDriver();
+
         }
         return driver;
     }

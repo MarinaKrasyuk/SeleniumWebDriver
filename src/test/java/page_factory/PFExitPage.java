@@ -12,7 +12,7 @@ public class PFExitPage {
     private static WebDriver driver;
     private WebDriverWait wait;
 
-    @FindBy(xpath = "//*[@id='passp:sign-in']")
+    @FindBy(xpath = "//*[@id='passp:sign-in1']")//uncorrect xpath
     WebElement signInButton;
 
 
