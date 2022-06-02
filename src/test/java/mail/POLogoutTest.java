@@ -2,7 +2,6 @@ package mail;
 import com.issoft.education.test.BaseTest;
 import constant.ConstantURL;
 import data.MailClass;
-import io.qameta.allure.Allure;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Flaky;
