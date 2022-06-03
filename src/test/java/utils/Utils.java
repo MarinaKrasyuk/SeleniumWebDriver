@@ -3,7 +3,6 @@ package utils;
 import com.issoft.education.test.BaseTest;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
-import org.checkerframework.checker.units.qual.Current;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
