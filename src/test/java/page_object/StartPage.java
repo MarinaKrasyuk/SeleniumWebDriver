@@ -16,7 +16,7 @@ public class StartPage {
         this.wait=wait;
     }
 
-    public LoginPage clickLoginPage() throws InterruptedException {
+    public LoginPage clickLoginPage() {
         clickLoginButton();
         return new LoginPage(driver,wait);
     }

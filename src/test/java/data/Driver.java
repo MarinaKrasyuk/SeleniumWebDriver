@@ -26,15 +26,16 @@ public class Driver {
 
     public static WebDriver getDriver() throws MalformedURLException {
         if (driver == null) {
-
-            FirefoxOptions browserOptions = new FirefoxOptions();
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+            driver=new ChromeDriver();
+           /* FirefoxOptions browserOptions = new FirefoxOptions();
             browserOptions.setPlatformName("Windows 8.1");
             browserOptions.setBrowserVersion("100");
             Map<String, Object> sauceOptions = new HashMap<>();
             browserOptions.setCapability("sauce:options", sauceOptions);
             URL url = new URL("https://oauth-marinakrasyuk-885c4:5edb7ae3-2576-467a-976e-349ccf75b270@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
             driver = new RemoteWebDriver(url, browserOptions);
-
+*/
 
         }
         return driver;
