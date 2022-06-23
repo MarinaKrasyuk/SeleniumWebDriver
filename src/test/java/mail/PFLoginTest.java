@@ -26,7 +26,7 @@ public class PFLoginTest extends BaseTest {
     @AllureId("#103")
     @Feature("Log in")
     @ParameterizedTest
-    @CsvSource(value = {"testqaqa.qa, CFStest"})
+    @CsvSource(value = {"testqaqa.qa, Kira3008"})
     public void loginTest(String login,String password) throws Exception {
         driver.get(ConstantURL.MAILLINK);
         mailPage= MailClass.logInPF(driver,wait,login,password);

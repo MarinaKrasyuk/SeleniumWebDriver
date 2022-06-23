@@ -19,7 +19,7 @@ public class POLogoutTest extends BaseTest {
     @AllureId("#101")
     @Flaky
     @ParameterizedTest
-    @CsvSource(value = {"testqaqa.qa, CFStest"})
+    @CsvSource(value = {"testqaqa.qa, Kira3008"})
     public void logoutTest(String login,String password) throws Exception {
         driver.get(ConstantURL.MAILLINK);
         mailPage=MailClass.logInPO(driver,wait,login,password);
