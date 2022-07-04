@@ -19,6 +19,7 @@ public class PFLogoutTest extends BaseTest {
     @Description("Page Factory: Logout Test")
     @AllureId("#104")
     @Flaky
+
     @ParameterizedTest
     @CsvSource(value = {"testqaqa.qa, Kira3008"})
     public void logoutTest(String login,String password) throws Exception {
